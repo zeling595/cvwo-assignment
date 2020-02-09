@@ -6,7 +6,7 @@ class Api::V1::TodosController < ApplicationController
 
   def create
     todo = Todo.create(todo_param)
-    render json: todo
+    @category.todos.push(todo)
   end
 
   def update
